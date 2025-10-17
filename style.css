@@ -1,0 +1,109 @@
+/* ==== RESET ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f7f7f9;
+}
+
+/* ==== SECTION WRAPPER ==== */
+.h {
+  position: relative;
+  padding: 15px 20px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==== HAMBURGER ==== */
+.hamburger img {
+  width: 30px;
+  cursor: pointer;
+}
+
+/* ==== NAV LINKS ==== */
+.nav-links {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  width: 70%;
+  background-color: white;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 80px 25px;
+  gap: 25px;
+  transition: left 0.3s ease;
+  z-index: 99;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #091e42;
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #3b82f6;
+}
+
+/* ==== ACTIVE MENU (VISIBLE) ==== */
+.nav-links.active {
+  left: 0;
+}
+
+/* ==== CLOSE BUTTON ==== */
+.close-btn {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  display: none;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.close-btn img {
+  width: 22px;
+}
+
+/* ==== SHOW CLOSE BUTTON WHEN MENU ACTIVE ==== */
+.nav-links.active ~ .close-btn {
+  display: block;
+}
+
+/* ==== MEDIA QUERIES ==== */
+@media screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    height: auto;
+    width: auto;
+    flex-direction: row;
+    box-shadow: none;
+    background: none;
+    left: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    color: #091e42;
+  }
+
+  .close-btn {
+    display: none;
+  }
+}
